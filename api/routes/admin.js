@@ -9,7 +9,7 @@ router.get('/department', (req, res, next) => {
     .then(response => {
         if(response){
             res.status(200).json({
-                departments: response
+                response
             })
         } else{
             res.status(200).json({

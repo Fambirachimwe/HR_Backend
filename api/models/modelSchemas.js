@@ -9,6 +9,7 @@ const actionSchema = new Schema({
 });
 
 const keyIssueSchema = new Schema({
+    name: String,
     objective: [{
         description: String,
         actions: [{action:actionSchema}] // action schema
