@@ -19,12 +19,23 @@ const keyIssueSchema = new Schema({
 
 //name
 // financial perspective cusomer perspective learning and growth
-exports.DepartmentSchema = new Schema({
+// exports.DepartmentSchema = new Schema({
+//     name: String,
+//     fp: keyIssueSchema,
+//     cp: keyIssueSchema,
+//     lg: keyIssueSchema
+// });
+
+
+exports.DepSchema = new Schema({
     name: String,
-    fp: keyIssueSchema,
-    cp: keyIssueSchema,
-    lg: keyIssueSchema
-});
+    keyIssues: [
+        {fp: keyIssueSchema},
+        {cp: keyIssueSchema},
+        {lg: keyIssueSchema},
+       
+    ]
+})
 
 
 
