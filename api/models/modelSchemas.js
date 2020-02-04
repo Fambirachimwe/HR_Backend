@@ -29,11 +29,12 @@ const keyIssueSchema = new Schema({
 
 exports.DepSchema = new Schema({
     name: String,
-    keyIssues: [{
-        fp: keyIssueSchema,
-        cp: keyIssueSchema,
-        lg: keyIssueSchema 
-    }]
+    keyIssues: [
+        {fp: keyIssueSchema},
+        {cp: keyIssueSchema},
+        {lg: keyIssueSchema},
+       
+    ]
 })
 
 

@@ -25,11 +25,15 @@ router.get('/department', (req, res, next) => {
 
 
 router.post('/department', (req, res, next) =>{
+    
     const department = new models.DepartmentModel({
         name: req.body.name,
-        fp: req.body.fp,
-        cp: req.body.cp,
-        lg: req.body.lg
+        keyIssues: [
+            {fp: req.body.keyIssues[0].fp},
+            {cp: req.body.keyIssues[1].cp},
+            {lg: req.body.keyIssues[2].lg}
+        ],   
+        
     })
     .save()
     .then(dpt => {
